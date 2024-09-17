@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
             "Render an interval of the pag file",
             "Render Multiple PAGImageView",
             "Render PAGImageView in list",
+            "Study PAG Animation"
     };
 
     @Override
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements SimpleListAdapter
             case 7:
                 startActivity(new Intent(MainActivity.this, PAGImageViewListActivity.class));
                 break;
+            case 8:
+                startActivity(new Intent(MainActivity.this, StudyPAGActivity.class));
             default:
                 break;
         }
