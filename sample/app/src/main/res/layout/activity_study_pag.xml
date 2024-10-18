@@ -16,6 +16,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <FrameLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pag"
+        android:layout_marginTop="100dp"
+        android:layout_width="1045dp"
+        android:layout_height="88dp"
+        android:background="#88ff00ff"
+        tools:ignore="RtlSymmetry">
+
+        <org.libpag.PAGImageView
+            android:id="@+id/pag_wave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"/>
+
+    </FrameLayout>
+
     <Button
         android:id="@+id/btn_listening"
         android:layout_width="wrap_content"

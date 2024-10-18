@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.libpag.PAGFile;
+import org.libpag.PAGImageView;
 import org.libpag.PAGView;
 
 
@@ -17,15 +18,28 @@ public class StudyPAGActivity extends AppCompatActivity implements View.OnClickL
     private static final String TAG = "StudyPAGActivity";
 
     private PAGView pagView;
+    private PAGImageView pagWave;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_pag);
         pagView = findViewById(R.id.pag);
+        pagWave = findViewById(R.id.pag_wave);
         Button btnListening = findViewById(R.id.btn_listening);
         Button btnSpeaking = findViewById(R.id.btn_speaking);
         btnListening.setOnClickListener(this);
         btnSpeaking.setOnClickListener(this);
+        PAGFile pagFile = PAGFile.Load(getAssets(), "wave_voice_listening_night.pag");
+        showWave(pagFile);
+    }
+
+    private void showWave(PAGFile pagFile) {
+        pagWave.setComposition(pagFile);
+        pagWave.setRepeatCount(-1);
+        pagWave.play();
     }
 
     @SuppressLint("NonConstantResourceId")
